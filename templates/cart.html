@@ -1,0 +1,15 @@
+
+<h1>Shopping Cart</h1>
+<ul>
+{% for item in cart %}
+<li>{{ item.product.name }} x {{ item.quantity }}</li>
+{% endfor %}
+</ul>
+<form action="/update_cart" method="POST">
+<input type="submit" value="Update Cart">
+</form>
+<form action="/checkout" method="GET">
+<input type="submit" value="Checkout">
+</form>
+
+
