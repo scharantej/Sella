@@ -1,0 +1,28 @@
+
+<h1>Products</h1>
+<div class="filters">
+<form action="/products" method="GET">
+<label for="category">Category:</label>
+<select name="category">
+<option value="">All</option>
+<option value="basketball">Basketball</option>
+<option value="soccer">Soccer</option>
+<option value="tennis">Tennis</option>
+</select>
+<label for="sort_by">Sort by:</label>
+<select name="sort_by">
+<option value="name">Name</option>
+<option value="price">Price</option>
+</select>
+<input type="submit" value="Filter">
+</form>
+</div>
+<div class="products">
+<ul>
+{% for product in products %}
+<li><a href="/product/{{ product.id }}">{{ product.name }}</a></li>
+{% endfor %}
+</ul>
+</div>
+
+
